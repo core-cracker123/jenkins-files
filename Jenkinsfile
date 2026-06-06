@@ -7,11 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Fetch Code') {
-            steps {
-                checkout scm
-            }
-        }
 
         stage('Build') {
             steps {

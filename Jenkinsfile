@@ -4,6 +4,7 @@ pipeline {
     // This pulls Maven automatically if configured in Jenkins Global Tool Configuration
     tools {
         maven 'Maven 3' 
+        jdk 'JDK-17'
     }
 
     stages {

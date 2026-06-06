@@ -16,34 +16,35 @@
     </properties>
 
     <dependencies>
-    <!-- Legacy JAX-RS API -->
+    <!-- Jakarta RESTful Web Services API (JAX-RS) -->
     <dependency>
-        <groupId>javax.ws.rs</groupId>
-        <artifactId>javax.ws.rs-api</artifactId>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>3.1.0</version>
+    </dependency>
+
+    <!-- Jakarta XML Binding API (JAXB) -->
+    <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>4.0.2</version>
+    </dependency>
+
+    <!-- Jakarta Annotations API -->
+    <dependency>
+        <groupId>jakarta.annotation</groupId>
+        <artifactId>jakarta.annotation-api</artifactId>
         <version>2.1.1</version>
     </dependency>
 
-    <!-- Legacy JAXB API -->
+    <!-- Jakarta Injection API -->
     <dependency>
-        <groupId>javax.xml.bind</groupId>
-        <artifactId>jaxb-api</artifactId>
-        <version>2.3.1</version>
-    </dependency>
-
-    <!-- Legacy Common Annotations API -->
-    <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>1.3.2</version>
-    </dependency>
-
-    <!-- Legacy Dependency Injection API -->
-    <dependency>
-        <groupId>javax.inject</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>1</version>
+        <groupId>jakarta.inject</groupId>
+        <artifactId>jakarta.inject-api</artifactId>
+        <version>2.0.1</version>
     </dependency>
 </dependencies>
+
              
     <build>
         <plugins>

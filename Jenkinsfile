@@ -1,56 +1,39 @@
 pipeline {
     agent any 
 
-    // This pulls Maven automatically if configured in Jenkins Global Tool Configuration
     tools {
-        maven 'Maven 3' 
+        maven 'Maven-3'
         jdk 'JDK-17'
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                echo 'Pulling Java code from Git...'
-            }
-        }
 
-        stage('Compile & Build') {
+        stage('Build') {
             steps {
-                echo 'Compiling Java source code...'
-                // Cleans old builds and compiles code without running tests yet
                 sh 'mvn clean compile'
             }
         }
 
-        stage('Run Unit Tests') {
+        stage('Test') {
             steps {
-                echo 'Executing JUnit tests...'
-                // Runs all tests in the src/test directory
                 sh 'mvn test'
             }
         }
 
-        stage('Package Application') {
+        stage('Package') {
             steps {
-                echo 'Packaging application into a JAR file...'
-                // Builds the final executable JAR file
-                sh 'mvn package -DskipTests'
-                
-                // Optional: Archives the generated JAR so you can download it from the Jenkins UI
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                sh 'mvn package'
             }
         }
     }
 
     post {
-        always {
-            echo 'Pipeline execution completed.'
-        }
         success {
-            echo 'Java Demo build was successful!'
+            echo 'Build successful!'
         }
         failure {
-            echo 'Java Demo build failed. Check Maven logs.'
+            echo 'Build Failed!'
         }
     }
+
 }

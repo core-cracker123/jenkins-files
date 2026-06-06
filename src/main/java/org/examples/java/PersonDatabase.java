@@ -3,9 +3,9 @@ package org.examples.java;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Singleton;
-import javax.ws.rs.NotFoundException;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Singleton;
+import jakarta.ws.rs.NotFoundException;
 
 @Singleton
 public class PersonDatabase {
